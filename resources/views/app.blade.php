@@ -6,6 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Laravel</title>
 
+	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/extra.css') }}" rel="stylesheet">
+
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
@@ -47,10 +50,13 @@
 
 </head>
 <body class="independent green sport home" data-domain="www.independent.ie" data-section-path="sport/" data-article="">
+
     @if (Auth::guest())
+    <div class="menuWrap">
         @include('menu.partials._menu')
     @endif
-	@yield('content')
+    </div>
+    @yield('content')
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
