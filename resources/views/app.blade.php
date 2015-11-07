@@ -6,8 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Laravel</title>
 
-	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
@@ -17,42 +15,41 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+
+    <script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="shortcut icon" href="{{ asset('/img/favicon-independent.ico') }}" type="image/x-icon"/>
+    <link href="{{ asset('/css/screen.minee61.css') }}" media="screen" rel="stylesheet">
+    <link href="{{ asset('/css/widgets.min3d94.css') }}" media="screen" rel="stylesheet">
+    <link href="{{ asset('/css/jquery-ui.mine22d.css') }}" media="screen" rel="stylesheet">
+    <link href="{{ asset('/css/print.minfb8c.css') }}" media="print"  rel="stylesheet">
+    <script type="text/javascript">
+        window.publicationUrl = 'http://www.independent.ie/';
+        window.publicationTitle = 'Independent.ie';
+        window.breadcrumb = 'Independent.ie;Sport';
+    </script>
+    <script type="text/javascript" src="{{ asset('/js/head.mina670.js') }}"></script>
+    <script type="text/javascript">
+        head.js(
+                { jquery: 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js' },
+                { jqueryui: 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/jquery-ui.min.js' },
+                { extras: 'http://www.independent.ie/js/extras.min.js?v=a35ac' },
+                { global: 'http://www.independent.ie/js/scripts.min.js?v=f877c' },
+                { widgets: 'http://www.independent.ie/js/widgets.min.js?v=69510' }
+        );
+    </script>
+
+    <meta name="keywords" content="independent"/>
+    <meta name="description" content="Sports news, photos, video and commentary from the Irish Independent."/>
+    <title>Sports News - Latest Sport News &amp; Results - Independent.ie</title>
+
+
 </head>
-<body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
-			</div>
-
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Home</a></li>
-				</ul>
-
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						<li><a href="{{ url('/auth/register') }}">Register</a></li>
-					@else
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-							</ul>
-						</li>
-					@endif
-				</ul>
-			</div>
-		</div>
-	</nav>
-
+<body class="independent green sport home" data-domain="www.independent.ie" data-section-path="sport/" data-article="">
+    @if (Auth::guest())
+        @include('menu.partials._menu')
+    @endif
 	@yield('content')
 
 	<!-- Scripts -->
